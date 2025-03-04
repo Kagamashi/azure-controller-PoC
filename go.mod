@@ -1,4 +1,5 @@
-module github.com/kagamashi/azure-controller-PoC
+// module github.com/kagamashi/azure-controller-PoC
+module example.com
 
 go 1.23.0
 
