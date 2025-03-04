@@ -5,6 +5,7 @@
 domain: my.domain
 layout:
 - go.kubebuilder.io/v4
+multigroup: true
 projectName: azure-controller-poc
 repo: my.domain/guestbook
 resources:
