@@ -33,3 +33,6 @@ later we can construct new &CronJob{} given some JSON from API server:
 }
 '''
 
+
+markers
+act as extra metadata telling controller-tools (our code and YAML generator) extra information
