@@ -92,9 +92,26 @@ func main() {
 		TLSOpts: tlsOpts,
 	})
 
+	// use DefaultNamespaces from cache.Options{} to cache objects in specific set of namespaces
+	// var namespaces []string // List of Namespaces
+	// defaultNamespaces := make(map[string]cache.Config)
+
+	// for _, ns := range namespaces {
+	// 		defaultNamespaces[ns] = cache.Config{}
+	// }
+
 	// instantiate a manager which keeps track of running all of our controllers
 	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
 		Scheme: scheme,
+
+		// restrict namespace that all controllers will watch:
+		// !IMPORTANT: remember to
+		// Cache: cache.Options{
+		// 	DefaultNamespaces: map[string]cache.Config{
+		// 		namespace: {},
+		// 	},
+		// },
+
 		Metrics: metricsserver.Options{
 			BindAddress:   metricsAddr,
 			SecureServing: secureMetrics,
